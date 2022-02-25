@@ -41,6 +41,21 @@ public class ArrayDictionary <T,E> {
 
     }
 
+    public boolean contains(E tag){ //returns true if a value is stored somewhere in the array bssed on tag
+        if(tags.contains(tags)==false){
+            return false;
+        }
+        return true;
+    }
+
+
+    public boolean isEmpty(){ //returns true if the object is empty, false if it is full
+        if(tags.size()>0&&Vals.size()>0){
+            return false;
+        }
+        return true;
+    }
+
     
 
 
