@@ -8,6 +8,9 @@
  **/
 
 import java.util.ArrayList;
+import java.util.Collection;
+
+
 public class ArrayDictionary <T,E> {
     private ArrayList<E> tags;
     private ArrayList<T> Vals;
@@ -56,6 +59,19 @@ public class ArrayDictionary <T,E> {
         return true;
     }
 
+    public int size(){//returns the number of stored values
+        return Vals.size();
+    }
+
+    public Collection<E> keys(){//returns tag array as a collection
+        Collection temp = tags;
+        return temp;
+    }
+
+    public Collection<E> values(){//returns vslues array as a collection
+        Collection temp = Vals;
+        return temp;
+    }
     
 
 
