@@ -22,6 +22,27 @@ public class ArrayDictionary <T,E> {
         Vals.add(value);
     }
 
+    public T get(E tag){//returns a value given the corresponding tag
+        if(tags.contains(tag)) {
+            return Vals.get(tags.indexOf(tag));
+        }
+        return null;
+    }
+
+    public T remove(E tag){//removes a given value given its tag and returns the value deleted
+        if(tags.contains(tag)){
+            int temp=tags.indexOf(tag);
+            tags.remove(tag);
+            T temp2=Vals.get(temp);
+            Vals.remove(temp);
+            return temp2;
+        }
+        return null;
+
+    }
+
+    
+
 
 
 }
