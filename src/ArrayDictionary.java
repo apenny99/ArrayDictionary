@@ -14,6 +14,7 @@ import java.util.Collection;
 public class ArrayDictionary <T,E> {
     private ArrayList<E> tags;
     private ArrayList<T> Vals;
+    private int length=0;
 
     public ArrayDictionary() { //default constructor
         tags = new ArrayList<>();
@@ -23,6 +24,7 @@ public class ArrayDictionary <T,E> {
     public void put(E tag, T value){ //adds a value to the value array list and a corresponding tag to the tag arraylist
         tags.add(tag);
         Vals.add(value);
+        length++;
     }
 
     public T get(E tag){//returns a value given the corresponding tag
@@ -38,6 +40,7 @@ public class ArrayDictionary <T,E> {
             tags.remove(tag);
             T temp2=Vals.get(temp);
             Vals.remove(temp);
+            length--;
             return temp2;
         }
         return null;
@@ -45,10 +48,11 @@ public class ArrayDictionary <T,E> {
     }
 
     public boolean contains(E tag){ //returns true if a value is stored somewhere in the array bssed on tag
-        if(tags.contains(tags)==false){
+        if(tags.contains(tag)){
+            return true;
+        } else {
             return false;
         }
-        return true;
     }
 
 
@@ -58,6 +62,7 @@ public class ArrayDictionary <T,E> {
         }
         return true;
     }
+
 
     public int size(){//returns the number of stored values
         return Vals.size();
